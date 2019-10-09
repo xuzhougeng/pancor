@@ -9,7 +9,7 @@
 data(panCCLE_small)
 }
 \description{
-Data are downloaded from \href{https://portals.broadinstitute.org/ccle}
+Data are downloaded from \href{https://portals.broadinstitute.org/ccle}{CCLE}
 }
 \examples{
 data(panCCLE_small)

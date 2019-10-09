@@ -1,6 +1,6 @@
 #' TCGA preprocessed data for correlationship analysis
 #'
-#' Data are downloaded from \href{http://xena.ucsc.edu/}
+#' Data are downloaded from \href{http://xena.ucsc.edu/}{XENA}
 #'
 #' @docType data
 #'
@@ -16,7 +16,7 @@
 
 #' GTEx preprocessed data for correlationship analysis
 #'
-#' Data are downloaded from \href{https://gtexportal.org/home/}
+#' Data are downloaded from \href{https://gtexportal.org/home/}{GTEx}
 #'
 #' @docType data
 #'
@@ -32,7 +32,7 @@
 
 #' CCLE preprocessed data for correlationship analysis
 #'
-#' Data are downloaded from \href{https://portals.broadinstitute.org/ccle}
+#' Data are downloaded from \href{https://portals.broadinstitute.org/ccle}{CCLE}
 #'
 #' @docType data
 #'

@@ -9,7 +9,7 @@
 data(panGTEX_small)
 }
 \description{
-Data are downloaded from \href{https://gtexportal.org/home/}
+Data are downloaded from \href{https://gtexportal.org/home/}{GTEx}
 }
 \examples{
 data(panGTEX_small)

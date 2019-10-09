@@ -9,7 +9,7 @@
 data(pancancer_small)
 }
 \description{
-Data are downloaded from \href{http://xena.ucsc.edu/}
+Data are downloaded from \href{http://xena.ucsc.edu/}{XENA}
 }
 \examples{
 data(pancancer_small)
