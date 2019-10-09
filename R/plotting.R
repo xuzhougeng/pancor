@@ -10,7 +10,8 @@
 #' @examples
 #' data(pancancer_small)
 #' df <- pancor(pancancer_small, "METTL3", "SETD2")
-#' ggpancor(df)
+#' p <- ggpancor(df)
+#' print(p)
 #'
 #' @export
 #' @author Shipeng Guo, Zhougeng Xu
@@ -47,7 +48,6 @@ ggpancor <- function(data,
           axis.line = element_line(colour = "black"),
           panel.border = element_rect(colour = "black", fill=NA, size=1.5),
           plot.margin = margin(1, 1, 1, 1, "cm"))
-  print(p)
   return(p)
 
 }
@@ -76,8 +76,10 @@ ggpancor <- function(data,
 #'
 #' @examples
 #' data(pancancer_small)
-#' ggcorplot(pancancer_small, "METTL3","SETD2")
-#' ggcorplot(pancancer_small, "METTL3","SETD2", "BRCA")
+#' p <- ggcorplot(pancancer_small, "METTL3","SETD2")
+#' p
+#' p <- ggcorplot(pancancer_small, "METTL3","SETD2", "BRCA")
+#' p
 #'
 #' @export
 #' @author Shipeng Guo, Zhougeng Xu
@@ -106,7 +108,6 @@ ggcorplot <- function(data, gene1, gene2,
                                  cor.test.method = cor.test.method)))+
     theme(plot.title = element_text(hjust = 0.5),
           plot.margin = margin(1, 1, 1, 1, "cm"))
-  print(p)
   return(p)
 }
 

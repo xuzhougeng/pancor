@@ -22,7 +22,8 @@ pancor result plot
 \examples{
 data(pancancer_small)
 df <- pancor(pancancer_small, "METTL3", "SETD2")
-ggpancor(df)
+p <- ggpancor(df)
+print(p)
 
 }
 \author{

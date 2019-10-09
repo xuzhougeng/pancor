@@ -24,8 +24,10 @@ correlationship between two gene in single or all cancer
 }
 \examples{
 data(pancancer_small)
-ggcorplot(pancancer_small, "METTL3","SETD2")
-ggcorplot(pancancer_small, "METTL3","SETD2", "BRCA")
+p <- ggcorplot(pancancer_small, "METTL3","SETD2")
+p
+p <- ggcorplot(pancancer_small, "METTL3","SETD2", "BRCA")
+p
 
 }
 \author{
