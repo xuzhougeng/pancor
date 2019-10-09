@@ -1,7 +1,8 @@
 Package: pancor
 Type: Package
-Title: Pancancer Correlationship Caculation and Plotting
-Description: Pancancer Correlationship Caculation and Plotting.
+Title: Calculation and Plot of Gene Correlationship in TCGA/GTEx/CCLE
+Description: The data of TCGA, GTEx and CCLE are downloaded and preprocessed.
+With the help of pancor, one can easily calculate the correlation of two gene in any cancer type. 
 Version: 0.1.0
 Authors@R: c(person(given = "Zhougeng", family = "Xu", email = "xuzhougeng@163.com", role  = c("aut", "cre")),
             person(given = "Shipeng", family = "Guo", role = "ctb"))
