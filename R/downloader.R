@@ -17,17 +17,20 @@
 #'
 #' @export
 #' @author Zhougeng Xu
-getExprSet <- function(file = "", outdir = ".",
-                     url = "119.29.67.25",
+getExprSet <- function(file = "", outdir = ".", dir = "pub",
+                     url = NULL,
                      user = NULL,
-                     password = NULL,
-                     dir = "pub"){
+                     password = NULL){
   if ( ! file %in% c("pancancer_mRNA_exprSet.Rdata",
                         "panCCLE_mRNA_exprSet.Rdata",
                         "panGTEX_mRNA_exprSet.Rdata",
                         "test.txt") ){
     stop("file is not existed in server")
 
+  }
+
+  if (is.null(url)){
+    url <- "119.29.67.25"
   }
 
   if (is.null(user)){
