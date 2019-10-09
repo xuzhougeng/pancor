@@ -14,7 +14,6 @@
 #' data(pancancer_small)
 "pancancer_small"
 
-
 #' GTEx preprocessed data for correlationship analysis
 #'
 #' Data are downloaded from \href{https://gtexportal.org/home/}
@@ -30,7 +29,6 @@
 #' @examples
 #' data(panGTEX_small)
 "panGTEX_small"
-
 
 #' CCLE preprocessed data for correlationship analysis
 #'

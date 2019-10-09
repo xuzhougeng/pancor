@@ -4,7 +4,8 @@
 \alias{ggcorplot}
 \title{ggcorplot}
 \usage{
-ggcorplot(data, gene1, gene2, type = "ALL", cor.test.method = "person")
+ggcorplot(data, gene1, gene2, type = "ALL",
+  cor.test.method = "pearson")
 }
 \arguments{
 \item{data}{data.frame}
@@ -22,7 +23,6 @@ ggcorplot(data, gene1, gene2, type = "ALL", cor.test.method = "person")
 ggcorplot
 }
 \examples{
-data()
 data(pancancer_small)
 ggcorplot(pancancer_small, "METTL3","SETD2")
 ggcorplot(pancancer_small, "METTL3","SETD2", "BRCA")
