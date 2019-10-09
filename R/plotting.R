@@ -21,7 +21,6 @@
 #' "pearson", "kendall", "spearman", default is "pearsson"
 #'
 #' @examples
-#' data()
 #' data(pancancer_small)
 #' ggcorplot(pancancer_small, "METTL3","SETD2")
 #' ggcorplot(pancancer_small, "METTL3","SETD2", "BRCA")
@@ -30,7 +29,7 @@
 #' @author Shipeng Guo, Zhougeng Xu
 ggcorplot <- function(data, gene1, gene2,
                       type="ALL",
-                      cor.test.method = "person"){
+                      cor.test.method = "pearson"){
 
   if(type=="ALL"){
     plot_df <- data[,c(gene1, gene2)]
