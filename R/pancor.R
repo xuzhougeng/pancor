@@ -15,7 +15,7 @@
 #' @export
 #'
 #' @author Shipeng Guo, Zhougeng Xu
-pancor <- function(data, gene1, gene2, cor.test.type = "pearson"){
+pancor <- function(data, gene1, gene2, cor.test.method = "pearson"){
 
   data1 <- split(data, data$type)
 

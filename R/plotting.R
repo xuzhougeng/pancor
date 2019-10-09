@@ -1,4 +1,58 @@
-#' ggcorplot
+#' pancor result plot
+#'
+#' @import ggplot2
+#'
+#' @param data data return from pancor
+#' @param dot.szie = 6,
+#' @param dot.fill dot fill color, purple
+#' @param dot.color outside color, black
+#'
+#' @examples
+#' data(pancancer_small)
+#' df <- pancor(pancancer_small, "METTL3", "SETD2")
+#' ggpancor(df)
+#'
+#' @export
+#' @author Shipeng Guo, Zhougeng Xu
+ggpancor <- function(data,
+                     dot.szie = 6, dot.fill = "purple", dot.color = "black"){
+
+  p <- ggplot(data, aes(-log10(p.value), cor))+
+    ## dot
+    geom_point(size=dot.szie, fill= dot.fill ,
+               shape = 21,
+               colour = dot.color,
+               stroke = 2)+
+    ## y
+    scale_y_continuous(expand = c(0,0),
+                       limits = c(-1,1),
+                       breaks = seq(-1,1,0.2))+
+    ## x
+    scale_x_log10(expand = c(0,0),
+                  limits = c(0.1, 1000),
+                  breaks = c(0.1,10,1000))+
+    ## hline
+    geom_hline(yintercept = 0, size=1.5)+
+    ## vline
+    geom_vline(xintercept = -log10(0.5),size=1.5)+
+    ## labs
+    labs(x=bquote(-log[10]~italic("P")),y="Pearson correlation (r)")+
+    theme(axis.title=element_text(size=20),
+          axis.text = element_text(face = "bold",size = 16),
+          axis.ticks.length=unit(.4, "cm"),
+          axis.ticks = element_line(colour = "black", size = 1),
+          panel.background = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          axis.line = element_line(colour = "black"),
+          panel.border = element_rect(colour = "black", fill=NA, size=1.5),
+          plot.margin = margin(1, 1, 1, 1, "cm"))
+  print(p)
+  return(p)
+
+}
+
+#' correlationship between two gene in single or all cancer
 #'
 #' @importFrom ggplot2 ggplot
 #' @importFrom ggplot2 aes
@@ -45,8 +99,8 @@ ggcorplot <- function(data, gene1, gene2,
                 size=2,col="#fdc086")+
     geom_rug(col="#7fc97f")+
     theme_minimal()+
-    xlab(paste0("Expression of ",a," (log2(TPM))"))+
-    ylab(paste0("Expression of ",b," (log2(TPM))"))+
+    xlab(paste0("Expression of ", gene1, " (log2(TPM))"))+
+    ylab(paste0("Expression of ", gene2, " (log2(TPM))"))+
     labs(title = paste0(corr_eqn(plot_df$geneA,
                                  plot_df$geneB,
                                  cor.test.method = cor.test.method)))+

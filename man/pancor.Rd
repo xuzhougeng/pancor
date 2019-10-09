@@ -4,7 +4,7 @@
 \alias{pancor}
 \title{caculate the correlatship ratio in pancancer}
 \usage{
-pancor(data, gene1, gene2, cor.test.type = "pearson")
+pancor(data, gene1, gene2, cor.test.method = "pearson")
 }
 \arguments{
 \item{data}{data.frame}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/plotting.R
 \name{ggcorplot}
 \alias{ggcorplot}
-\title{ggcorplot}
+\title{correlationship between two gene in single or all cancer}
 \usage{
 ggcorplot(data, gene1, gene2, type = "ALL",
   cor.test.method = "pearson")
@@ -20,7 +20,7 @@ ggcorplot(data, gene1, gene2, type = "ALL",
 "pearson", "kendall", "spearman", default is "pearsson"}
 }
 \description{
-ggcorplot
+correlationship between two gene in single or all cancer
 }
 \examples{
 data(pancancer_small)
