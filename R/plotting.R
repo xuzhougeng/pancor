@@ -1,6 +1,7 @@
 #' pancor result plot
 #'
 #' @import ggplot2
+#' @importFrom rlang .data
 #'
 #' @param data data return from pancor
 #' @param dot.szie = 6,
@@ -18,7 +19,7 @@
 ggpancor <- function(data,
                      dot.szie = 6, dot.fill = "purple", dot.color = "black"){
 
-  p <- ggplot(data, aes(-log10(p.value), cor))+
+  p <- ggplot(data, aes(-log10(.data$p.value), .data$cor))+
     ## dot
     geom_point(size=dot.szie, fill= dot.fill ,
                shape = 21,
@@ -54,18 +55,10 @@ ggpancor <- function(data,
 
 #' correlationship between two gene in single or all cancer
 #'
-#' @importFrom ggplot2 ggplot
-#' @importFrom ggplot2 aes
-#' @importFrom ggplot2 geom_point
-#' @importFrom ggplot2 geom_smooth
-#' @importFrom ggplot2 geom_rug
-#' @importFrom ggplot2 theme_minimal
-#' @importFrom ggplot2 xlab
-#' @importFrom ggplot2 ylab
-#' @importFrom ggplot2 labs
-#' @importFrom ggplot2 theme
-#' @importFrom ggplot2 element_text
-#' @importFrom ggplot2 margin
+#' @importFrom stats cor
+#' @importFrom stats lm
+#' @importFrom rlang .data
+#' @import ggplot2
 #'
 #' @param data data.frame
 #' @param gene1 charactor of gene name, e.g. "METTL3"
@@ -94,7 +87,8 @@ ggcorplot <- function(data, gene1, gene2,
   }
 
   names(plot_df) <- c("geneA","geneB")
-  p <- ggplot(plot_df, aes(geneA,geneB))+
+
+  p <- ggplot(plot_df, aes(.data$geneA, .data$geneB))+
     geom_point(col="#984ea3")+
     geom_smooth(method = lm, se=T,na.rm=T,
                 fullrange=T,

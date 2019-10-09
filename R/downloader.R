@@ -1,7 +1,9 @@
 #' download exprSet data
 #'
+#' @importFrom utils download.file
 #' @param file  one of pancancer_mRNA_exprSet.Rdata
 #' panCCLE_mRNA_exprSet.Rdata  panGTEX_mRNA_exprSet.Rdata
+#' @param outdir data store directory
 #' @param url ftp url
 #' @param user ftp user
 #' @param password ftp password
@@ -9,7 +11,7 @@
 #'
 #' @examples
 #' temp_dir <- tempdir()
-#' getExprSet(file = "welcome.txt", dir = temp_dir)
+#' getExprSet(file = "test.txt", outdir = temp_dir)
 #'
 #' \dontrun{
 #' getExprSet(file = "pancancer_mRNA_exprSet.Rdata")

@@ -4,27 +4,29 @@
 \alias{getExprSet}
 \title{download exprSet data}
 \usage{
-getExprSet(file = "", outdir = ".", url = "119.29.67.25",
-  user = NULL, password = NULL, dir = "pub")
+getExprSet(file = "", outdir = ".", dir = "pub", url = NULL,
+  user = NULL, password = NULL)
 }
 \arguments{
 \item{file}{one of pancancer_mRNA_exprSet.Rdata
 panCCLE_mRNA_exprSet.Rdata  panGTEX_mRNA_exprSet.Rdata}
+
+\item{outdir}{data store directory}
+
+\item{dir}{ftp directory}
 
 \item{url}{ftp url}
 
 \item{user}{ftp user}
 
 \item{password}{ftp password}
-
-\item{dir}{ftp directory}
 }
 \description{
 download exprSet data
 }
 \examples{
 temp_dir <- tempdir()
-getExprSet(file = "welcome.txt", dir = temp_dir)
+getExprSet(file = "test.txt", outdir = temp_dir)
 
 \dontrun{
 getExprSet(file = "pancancer_mRNA_exprSet.Rdata")
