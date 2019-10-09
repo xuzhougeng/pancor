@@ -9,6 +9,8 @@ library(pancor)
 
 ## Usage:
 
+test dasta
+
 ```r
 data("pancancer_small")
 df <- pancor(pancancer_small, "METTL3", "SETD2")
@@ -17,6 +19,27 @@ ggpancor(df)
 
 ```r
 ggcorplot(pancancer_small, "METTL3","SETD2", cor.test.method = "pearson")
+```
+
+If you want to use the full data, you need download our preprocessed Rdata with  `getExprSet`
+
+```r
+getExprSet("pancancer_mRNA_exprSet.Rdata")
+```
+
+Then load this data to environment
+
+```r
+load("pancancer_mRNA_exprSet.Rdata")
+```
+
+The following analysis is same as previous
+
+```r
+df <- pancor(mRNA_exprSet, "METTL3", "SETD2")
+ggpancor(df)
+
+ggcorplot(mRNA_exprSet, "METTL3","SETD2", cor.test.method = "pearson")
 ```
 
 ## Reference
