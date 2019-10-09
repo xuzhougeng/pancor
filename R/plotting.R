@@ -113,7 +113,7 @@ ggcorplot <- function(data, gene1, gene2,
 
 corr_eqn <- function(x, y,
                      digits=2,
-                     cor.test.method = "person") {
+                     cor.test.method = "pearson") {
 
   test <- cor.test(x,y, method = cor.test.method)
   paste(paste0("n = ",length(x)),
