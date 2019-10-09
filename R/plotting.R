@@ -86,7 +86,7 @@ ggpancor <- function(data,
 ggcorplot <- function(data, gene1, gene2,
                       type="ALL",
                       cor.test.method = "pearson"){
-
+  options(scipen = 2)
   if(type=="ALL"){
     plot_df <- data[,c(gene1, gene2)]
   }else{
@@ -115,6 +115,7 @@ corr_eqn <- function(x, y,
                      digits=2,
                      cor.test.method = "pearson") {
 
+  options(scipen = 2)
   test <- cor.test(x,y, method = cor.test.method)
   paste(paste0("n = ",length(x)),
         paste0("r = ",round(test$estimate,digits),'"(', cor.test.method,')"'),
