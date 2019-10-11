@@ -7,6 +7,7 @@
 #' @param dot.szie = 6,
 #' @param dot.fill dot fill color, purple
 #' @param dot.color outside color, black
+#' @return a ggplot object
 #'
 #' @examples
 #' data(pancancer_small)
@@ -18,6 +19,7 @@
 #' @author Shipeng Guo, Zhougeng Xu
 ggpancor <- function(data,
                      dot.szie = 6, dot.fill = "purple", dot.color = "black"){
+
 
   p <- ggplot(data, aes(-log10(.data$p.value), .data$cor))+
     ## dot
@@ -49,6 +51,7 @@ ggpancor <- function(data,
           axis.line = element_line(colour = "black"),
           panel.border = element_rect(colour = "black", fill=NA, size=1.5),
           plot.margin = margin(1, 1, 1, 1, "cm"))
+
   return(p)
 
 }
@@ -67,6 +70,8 @@ ggpancor <- function(data,
 #' @param cor.test.method cor.test method, one of
 #' "pearson", "kendall", "spearman", default is "pearsson"
 #'
+#' @return a ggplot object
+#'
 #' @examples
 #' data(pancancer_small)
 #' p <- ggcorplot(pancancer_small, "METTL3","SETD2")
@@ -79,7 +84,7 @@ ggpancor <- function(data,
 ggcorplot <- function(data, gene1, gene2,
                       type="ALL",
                       cor.test.method = "pearson"){
-  options(scipen = 2)
+  oldoptions <- options(SCIPEN = 2)
   if(type=="ALL"){
     plot_df <- data[,c(gene1, gene2)]
   }else{
@@ -102,6 +107,8 @@ ggcorplot <- function(data, gene1, gene2,
                                  cor.test.method = cor.test.method)))+
     theme(plot.title = element_text(hjust = 0.5),
           plot.margin = margin(1, 1, 1, 1, "cm"))
+
+  on.exit(options(oldoptions))
   return(p)
 }
 
@@ -109,7 +116,6 @@ corr_eqn <- function(x, y,
                      digits=2,
                      cor.test.method = "pearson") {
 
-  options(scipen = 2)
   test <- cor.test(x,y, method = cor.test.method)
   paste(paste0("n = ",length(x)),
         paste0("r = ",round(test$estimate,digits),'"(', cor.test.method,')"'),

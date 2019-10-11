@@ -8,6 +8,8 @@
 #' @param cor.test.method cor.test method, one of
 #' "pearson", "kendall", "spearman", default is "pearson"
 #'
+#' @return data.frame contains the genes correlation
+#'
 #' @examples
 #' data(pancancer_small)
 #' pancor(pancancer_small, "METTL3", "SETD2")

@@ -16,6 +16,9 @@ pancor(data, gene1, gene2, cor.test.method = "pearson")
 \item{cor.test.method}{cor.test method, one of
 "pearson", "kendall", "spearman", default is "pearson"}
 }
+\value{
+data.frame contains the genes correlation
+}
 \description{
 caculate the correlatship ratio in pancancer
 }

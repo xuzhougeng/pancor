@@ -9,6 +9,8 @@
 #' @param password ftp password
 #' @param dir ftp directory
 #'
+#' @return a .Rdata file in working directory
+#'
 #' @examples
 #' temp_dir <- tempdir()
 #' getExprSet(file = "test.txt", outdir = temp_dir)

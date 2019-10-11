@@ -16,6 +16,9 @@ ggpancor(data, dot.szie = 6, dot.fill = "purple",
 
 \item{dot.color}{outside color, black}
 }
+\value{
+a ggplot object
+}
 \description{
 pancor result plot
 }

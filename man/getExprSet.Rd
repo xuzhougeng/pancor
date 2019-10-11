@@ -21,6 +21,9 @@ panCCLE_mRNA_exprSet.Rdata  panGTEX_mRNA_exprSet.Rdata}
 
 \item{password}{ftp password}
 }
+\value{
+a .Rdata file in working directory
+}
 \description{
 download exprSet data
 }

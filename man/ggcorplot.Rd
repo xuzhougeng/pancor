@@ -19,6 +19,9 @@ ggcorplot(data, gene1, gene2, type = "ALL",
 \item{cor.test.method}{cor.test method, one of
 "pearson", "kendall", "spearman", default is "pearsson"}
 }
+\value{
+a ggplot object
+}
 \description{
 correlationship between two gene in single or all cancer
 }
