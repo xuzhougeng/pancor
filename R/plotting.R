@@ -85,6 +85,7 @@ ggcorplot <- function(data, gene1, gene2,
                       type="ALL",
                       cor.test.method = "pearson"){
   oldoptions <- options(SCIPEN = 2)
+  on.exit(options(oldoptions))
   if(type=="ALL"){
     plot_df <- data[,c(gene1, gene2)]
   }else{
@@ -108,7 +109,7 @@ ggcorplot <- function(data, gene1, gene2,
     theme(plot.title = element_text(hjust = 0.5),
           plot.margin = margin(1, 1, 1, 1, "cm"))
 
-  on.exit(options(oldoptions))
+
   return(p)
 }
 
