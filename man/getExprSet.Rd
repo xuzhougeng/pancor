@@ -31,8 +31,12 @@ download exprSet data
 temp_dir <- tempdir()
 getExprSet(file = "test.txt", outdir = temp_dir)
 
-\dontrun{
-getExprSet(file = "pancancer_mRNA_exprSet.Rdata")
+\donttest{
+# According to CRAN, function cannot modify user's home filespace,
+# so when run the example, the data will save at the tempdir.
+# You can remove the `outdir = tempdir()` to let the .Rdata save to
+# your current directory
+getExprSet(file = "pancancer_mRNA_exprSet.Rdata", outdir = tempdir())
 }
 
 }
